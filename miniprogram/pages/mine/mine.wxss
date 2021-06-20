@@ -1,0 +1,61 @@
+/* pages/mine/mine.wxss */
+@import "../../style/guide.wxss";
+
+.userinfo {
+  padding-left: 120rpx;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-block-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userinfo-avatar[size] {
+  width: 100rpx;
+}
+
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-block-nickname {
+  height: 100rpx;
+  margin: 20rpx;
+  line-height: 100rpx;
+  overflow: hidden;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 10px;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.userinfo-nickname-wrapper {
+  flex: 1;
+}
+
+.my-cells {
+  width: 100vw;
+}

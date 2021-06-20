@@ -1,0 +1,24 @@
+<!--pages/mysort/mysort.wxml-->
+
+<view class="container">
+  <view class="guide">
+    <text class="p">输入主题并选择人数，分享页面给群/好友</text>
+    <text class="p">系统会随机分配给各个小伙伴编号</text>
+  </view>
+  <view class="guide form">
+    <view class="form-section">
+      <input type="text" class="form-input" value="{{topic}}" bindinput="topicChanged" placeholder="输入主题，如“表演顺序”" />
+    </view>
+    <view class="form-section">
+      <text class="form-text">参与人数</text>
+      <slider bindchange="sliderChanged" value="{{amount}}" show-value min="2" max="100"></slider>
+    </view>
+    <view class="form-section">
+      <text class="form-text">参与人需填写姓名</text>
+      <switch checked="{{mustSpecifyName}}" bindchange="switchChanged"></switch>
+    </view>
+    <view class="form-section">
+      <button type="primary" bindtap="publishNow">马上发布</button>
+    </view>
+  </view>
+</view>

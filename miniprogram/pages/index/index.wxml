@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 排顺序 -->
+  <view class="uploader">
+    <navigator url="../mysort/mysort" open-type="navigate" class="uploader-text">
+      <mp-icon icon="pencil" size="24"></mp-icon>
+      <text>排顺序</text>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* pages/mysort/mysort.wxss */
+
+@import "../../style/guide.wxss";
+
+.guide .counter {
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.form .form-section {
+  margin: 20rpx 0;
+}

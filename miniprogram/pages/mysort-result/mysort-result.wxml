@@ -1,0 +1,47 @@
+<!--miniprogram/pages/mysort-result/mysort-result.wxml-->
+<mp-dialog title="未找到该排序" mask-closable="false" show="{{showDialog404}}" bindbuttontap="tapDialog404Button"
+  buttons="{{dialog404Buttons}}">
+  <view>该排序已被删除，或者您的链接有误！</view>
+</mp-dialog>
+
+<view class="guide">
+  <view class="card" wx:if="{{mysort}}">
+    <text class="header">{{mysort.topic}}</text>
+    <text class="p">发起时间：{{mysort._time}}</text>
+    <text class="p">参与人数：{{mysortResult.length}}/{{mysort.amount}}</text>
+  </view>
+  <mp-cells ext-class="my-cells">
+    <mp-cell wx:if="{{!(mysortResult&&mysortResult.length)}}">(暂无人参与)</mp-cell>
+    <mp-cell wx:for="{{mysortResult}}" wx:key="_id" title="{{index+1}}">
+      <view class="flex">
+        <view class="result-avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="result-nickname">
+          <text class="p">{{item.nickName}}</text>
+          <text class="italic">{{item._time}}</text>
+        </view>
+        <view class="result-value">
+          <text style="color:red">第{{item.result}}位</text>
+        </view>
+      </view>
+    </mp-cell>
+  </mp-cells>
+  <view class="spacer"></view>
+  <view class="card" wx:if="{{mysort&&mysort.mustSpecifyName&&canJoin}}">
+    <input type="text" value="{{value}}" bindinput="nameChanged" placeholder="请输入您的姓名参与！" />
+  </view>
+  <view class="spacer"></view>
+  <view class="flex">
+    <button type="default" open-type="share">
+      <mp-icon icon="share"></mp-icon>
+      <text>分享</text>
+    </button>
+    <button type="primary" wx:if="{{canJoin}}" bindtap="join">
+      <text>参与</text>
+    </button>
+    <button type="default" disabled="" wx:else>
+      <text>已参与</text>
+    </button>
+  </view>
+</view>

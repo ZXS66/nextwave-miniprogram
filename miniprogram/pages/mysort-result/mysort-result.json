@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell"
+  },
+  "navigationBarTitleText": "排顺序详情"
+}
