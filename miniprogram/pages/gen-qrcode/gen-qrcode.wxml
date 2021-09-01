@@ -1,0 +1,4 @@
+<!--miniprogram/pages/gen-qrcode/gen-qrcode.wxml-->
+<textarea placeholder="请填写您需要生成二维码的内容" confirm-type="生成二维码" bindblur="contentChanged" value="{{content}}" />
+<!-- <canvas type="2d" id="result"></canvas> -->
+<image alt="二维码" src="{{result}}"></image>

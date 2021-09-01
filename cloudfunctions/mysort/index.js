@@ -55,7 +55,7 @@ exports.main = async (event, context) => {
     // 获取“我创建的”和“我参与的”
     const resp_create = await db.collection(COLLECTION_MYSORT).where({ _openid: openid }).get();
     const mysort_create = resp_create.data;
-    const resp_join = db.collection(COLLECTION_MYSORT_RESULT).
+    const resp_join = await db.collection(COLLECTION_MYSORT_RESULT).
       aggregate().
       match({ _openid: openid }).
       lookup({
@@ -63,8 +63,9 @@ exports.main = async (event, context) => {
         localField: 'mysortId',
         foreignField: '_id',
         as: COLLECTION_MYSORT
-      }).end();
-    const mysort_join = resp_join.data || [];
+      }).
+      end();
+    const mysort_join = resp_join.list || [];
     return {
       openid,
       join: mysort_join,

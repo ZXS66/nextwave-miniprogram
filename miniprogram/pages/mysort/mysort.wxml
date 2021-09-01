@@ -11,12 +11,24 @@
     </view>
     <view class="form-section">
       <text class="form-text">参与人数</text>
-      <slider bindchange="sliderChanged" value="{{amount}}" show-value min="2" max="100"></slider>
+      <slider bindchange="amountChanged" value="{{amount}}" show-value min="2" max="100"></slider>
     </view>
     <view class="form-section">
       <text class="form-text">参与人需填写姓名</text>
-      <switch checked="{{mustSpecifyName}}" bindchange="switchChanged"></switch>
+      <switch checked="{{mustSpecifyName}}" bindchange="mustSpecifyNameChanged"></switch>
     </view>
+    <block wx:if="isAdmin">
+      <view class="spacer"></view>
+      <text class="p">高级设置（占位）</text>
+      <view class="form-section">
+        <picker bindchange="mySpotChanged" value="{{mySpot}}" range="{{availableSpots}}">
+          <view class="picker">
+            我：{{availableSpots[mySpot]}}
+          </view>
+        </picker>
+      </view>
+      
+    </block>
     <view class="form-section">
       <button type="primary" bindtap="publishNow">马上发布</button>
     </view>

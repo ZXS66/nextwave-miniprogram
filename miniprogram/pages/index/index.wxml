@@ -2,9 +2,13 @@
 <view class="container">
   <!-- 排顺序 -->
   <view class="uploader">
-    <navigator url="../mysort/mysort" open-type="navigate" class="uploader-text">
-      <mp-icon icon="pencil" size="24"></mp-icon>
+    <navigator url="../mysort/mysort?isAdmin={{isAdmin}}" open-type="navigate" class="uploader-text">
+      <image src="../../images/dice.svg" style="width:34rpx;height:34rpx;margin-right:1em" mode="scaleToFill"></image>
       <text>排顺序</text>
+    </navigator>
+    <navigator url="../gen-qrcode/gen-qrcode" open-type="navigate" class="uploader-text">
+      <mp-icon icon="qr-code" size="24"></mp-icon>
+      <text> 生成二维码</text>
     </navigator>
   </view>
 </view>

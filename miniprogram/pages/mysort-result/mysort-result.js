@@ -131,7 +131,7 @@ Page({
   onShareAppMessage: function () {
     if (this.data.mysort) {
       return {
-        title: '排顺序：' + this.data.mysort.topic,
+        title: '参与排顺序：' + this.data.mysort.topic,
         // imageUrl: ''
       };
     }

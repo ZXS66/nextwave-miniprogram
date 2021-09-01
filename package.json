@@ -1,0 +1,27 @@
+{
+  "name": "nextwave",
+  "version": "0.0.3",
+  "description": "时代残党·小程序",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/nextwave/nextwave-miniprogram.git"
+  },
+  "keywords": [
+    "时代残党",
+    "小程序",
+    "个人开发者"
+  ],
+  "author": "时代残党",
+  "license": "ISC",
+  "dependencies": {
+    "pure-svg-code": "^1.0.6"
+  },
+  "devDependencies": {
+    "yargs": "^17.0.1",
+    "yargs-parser": "^20.2.9"
+  }
+}

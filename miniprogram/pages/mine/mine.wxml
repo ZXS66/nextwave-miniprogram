@@ -26,9 +26,9 @@
   <mp-cells ext-class="my-cells" title="我参加的">
     <mp-cell wx:if="{{!(mysort_join&&mysort_join.length)}}">(空)</mp-cell>
     <mp-cell wx:for="{{mysort_join}}" wx:key="_id">
-      <navigator url="../mysort-result/mysort-result?_id={{item._id}}">
-        <text class="header">{{item.topic}}</text>
-        <text class="p">参与人数：{{item.amount}}</text>
+      <navigator url="../mysort-result/mysort-result?_id={{item.mysort[0]._id}}">
+        <text class="header">{{item.mysort[0].topic}}</text>
+        <text class="p">参与结果：{{item.result}}/{{item.mysort[0].amount}}</text>
         <text class="p">参与时间：{{item._time}}</text>
       </navigator>
     </mp-cell>

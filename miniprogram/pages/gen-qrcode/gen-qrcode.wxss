@@ -1,0 +1,16 @@
+/* miniprogram/pages/gen-qrcode/gen-qrcode.wxss */
+textarea {
+    width: 100vw;
+    min-height: 2em;
+    max-height: 8em;
+    border: 1rpx solid gray;
+    margin: 0;
+    padding: 1em
+}
+
+image {
+    width: 80vw;
+    height: 80vw;
+    margin: 10vw;
+    padding: 0;
+}

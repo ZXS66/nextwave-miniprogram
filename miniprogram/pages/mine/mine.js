@@ -1,5 +1,5 @@
 import { COLLECTION_MYSORT, COLLECTION_MYSORT_RESULT, SYMBOL_USER_PROFILE } from "../../constants";
-import { dateFormat, isNotEmptyString } from "../../util";
+import { dateFormat, isNotEmptyArray, isNotEmptyString } from "../../util";
 // pages/mine/mine.js
 const app = getApp();
 
@@ -25,25 +25,40 @@ Page({
     }
   },
   onShow: async function () {
-    const db = wx.cloud.database();
-    const formData = { _openid: app.globalData.openid };
     const that = this;
-
-    // 调用云函数 (coming soon...)
+    // 调用云函数
     const resp = await wx.cloud.callFunction({
       name: 'mysort',
       data: {}
     }).catch(err => {
       console.error('[云函数] [mysort] error: ', err.errMsg);
+      wx.showToast({
+        icon: 'error',
+        title: '获取数据异常',
+      })
       return err;
     });
     const result = resp.result;
+    console.log('[云函数] [mysort] result: ');
+    console.log(result);
     if (result) {
+      if (isNotEmptyArray(result.create)) {
+        result.create.forEach(v => {
+          v._time = dateFormat(v.time);
+        });
+      }
+      if (isNotEmptyArray(result.join)) {
+        result.join.forEach(v => {
+          v._time = dateFormat(v.time);
+        });
+      }
       that.setData({
         mysort_join: result.join,
         mysort_create: result.create
       });
     }
+    // const db = wx.cloud.database();
+    // const formData = { _openid: app.globalData.openid };
     // // 我参加的
     // db.collection(COLLECTION_MYSORT_RESULT).where(formData).get().then(response => {
     //   const mysort_join = response.data;
